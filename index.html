@@ -2,13 +2,36 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Lancio Dadi / E-mail</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-
+        <div class="container">
+            <div id="box-dadi">
+                <h1>Lancio dei dadi</h1>
+                <div id="box-giocatori">
+                    <div class="box">
+                        <h3>Punteggio</h3>
+                        <h4 id="punteggio-utente"></h4>
+                        <br>
+                        <p id="lancio-utente"></p>
+                    </div>
+                    <div class="boxt">
+                        <h3>punteggio</h3>
+                        <h4 id="punteggio-bot"></h4>
+                        <br>
+                        <p id="lancio-bot"></p>
+                    </div>
+                </div>
+                <h2 id="vincitore"></h2>
+            </div>
+            <div id="box-mail">
+                <h1 id="email-riscontro"></h1>
+            </div>
+        </div>
 
 
     <script src="js/dadi.js" charset="utf-8"></script>
-    <!-- <script src="js/mail.js" charset="utf-8"></script> -->
+    <script src="js/mail.js" charset="utf-8"></script>
     </body>
 </html>

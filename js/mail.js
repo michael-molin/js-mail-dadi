@@ -1,5 +1,6 @@
 var arrayMail = ['pippo@gmail.com' , 'ziopaperone@gmail.com' , 'paperina@gmail.com' , 'paperino@gmail.com' , 'topolino@gmail.com']
 var mailRichiesta = prompt('Inserisci l\'indirizzo mail che stai cercando: ');
+document.getElementById('box-mail').setAttribute('class' , 'visible-flex');
 
 for (var i=0 ; i <= arrayMail.length ; i++  ) {
     if (mailRichiesta == arrayMail[i]) {
@@ -8,7 +9,7 @@ for (var i=0 ; i <= arrayMail.length ; i++  ) {
 }
 
 if (!isNaN(mailPosizione)) {
-    console.log(mailRichiesta + ' trovata! In posizione: ' + parseInt(mailPosizione + 1) );
+    document.getElementById('email-riscontro').innerHTML = (mailRichiesta + ' trovato! In posizione: ' + parseInt(mailPosizione + 1) );
 } else {
-    console.log(mailRichiesta + ' non presente nell\'Array');
+    document.getElementById('email-riscontro').innerHTML = (mailRichiesta + ' non presente nell\'Array');
 }

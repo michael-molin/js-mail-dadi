@@ -3,27 +3,32 @@ var numeroTiri = parseInt(prompt('Ciao ' + nomeUtente + ' inserisci pure il nume
 var punteggioUtente = 0;
 var punteggioBot = 0;
 
+document.getElementById('box-dadi').setAttribute('class' , 'visible-flex');
+document.getElementById('box-giocatori').setAttribute('class' , 'visible-flex');
+
 if (isNaN(numeroTiri)) {
     alert('Non hai inserito un numero corretto!');
 } else {
     for (var i=1 ; i <= numeroTiri ; i++) {
-        var risultatoDado = (Math.floor((Math.random()*6)+1));
-        console.log('Hai tirato un ' + risultatoDado);
-        punteggioUtente = parseInt(punteggioUtente) + parseInt(risultatoDado);
+        var risultatoDadoUtente = (Math.floor((Math.random()*6)+1));
+        document.getElementById('lancio-utente').innerHTML = ('Hai tirato un ' + risultatoDadoUtente);
+        punteggioUtente = parseInt(punteggioUtente) + parseInt(risultatoDadoUtente);
+        document.getElementById('punteggio-utente').innerHTML = punteggioUtente;
+
+        var risultatoDadoBot = (Math.floor((Math.random()*6)+1));
+        document.getElementById('lancio-bot').innerHTML = ('Il bot ha tirato un ' + risultatoDadoBot);
+        punteggioBot = parseInt(punteggioBot) + parseInt(risultatoDadoBot);
+        document.getElementById('punteggio-bot').innerHTML = punteggioBot;
+
+        console.log('player ' + risultatoDadoUtente);
+        console.log('bot ' + risultatoDadoBot);
     }
-    console.log('Il tuo punteggio è di: ' + punteggioUtente);
-    for (var x=1 ; x <= numeroTiri ; x++) {
-        var risultatoDado = (Math.floor((Math.random()*6)+1));
-        console.log('Il bot ha tirato un ' + risultatoDado);
-        punteggioBot = parseInt(punteggioBot) + parseInt(risultatoDado);
-    }
-    console.log('Il punteggio del Bot è di: ' + punteggioBot);
 
     if (punteggioUtente > punteggioBot) {
-        console.log('Hai vinto!');
+        document.getElementById('vincitore').innerHTML = 'Hai vinto!';
     } else if (punteggioUtente < punteggioBot) {
-        console.log('Hai perso!');
+        document.getElementById('vincitore').innerHTML =  'Hai perso!';
     } else {
-        console.log('Pareggio!');
+        document.getElementById('vincitore').innerHTML = 'Pareggio!';
     }
 }
