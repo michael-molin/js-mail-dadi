@@ -3,7 +3,7 @@ var mailRichiesta = prompt('Inserisci l\'indirizzo mail che stai cercando: ');
 
 for (var i=0 ; i <= arrayMail.length ; i++  ) {
     if (mailRichiesta == arrayMail[i]) {
-        var mailPosizione = parseInt(i);
+        var mailPosizione = i;
     } else {}
 }
 
